@@ -15,3 +15,9 @@ Verified the fix with a minimal C++ example on Linux using Clang 21.1.8 and `-st
 Reviewed the proposed token mounts and environment-variable forwarding for `image_uri` / `container` workers under Kubernetes token authentication, and provided feedback on the approach.
 
 [Review comment](https://github.com/ray-project/ray/pull/66716#issuecomment-5991168256)
+
+### [#66818 — Honor per-task retry policy during actor restart](https://github.com/ray-project/ray/pull/66818)
+
+Reviewed actor-restart retry handling and raised a potential O(N²) scanning concern for large retryable backlogs in the out-of-order submission queue. Suggested avoiding repeated scans of retained tasks; end-to-end performance impact was not measured.
+
+[Review comment](https://github.com/ray-project/ray/pull/66818#discussion_r4241365677)
